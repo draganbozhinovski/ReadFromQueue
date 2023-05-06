@@ -70,15 +70,14 @@ az containerapp create `
   --scale-rule-name "azure-storage-queue-rule" `
   --scale-rule-type azure-queue `
   --scale-rule-metadata "queueName=$queue" `
-                        "namespace=azure-queue" `
                         "queueLength=5" `
                         "activationQueueLength=5" `
-                        "connectionFromEnv=secretref:queue-connection-string" `
                         "accountName=$storageAccount" `
                         "cloud=AzurePublicCloud" `
-  --scale-rule-auth "connection=secretref:queue-connection-string" `
+                        "connection=queue-connection-string" `
+  --scale-rule-auth "connection=queue-connection-string" `
 
-  1..100 | ForEach-Object -Parallel {
+  1..500 | ForEach-Object -Parallel {
     $queue = $($using:queue)
     $queueConnectionString = $($using:queueConnectionString)
 
