@@ -23,7 +23,6 @@ az storage queue create --name $queue `
     --account-name $storageAccount `
     --connection-string $queueConnectionString
 
-#DefaultEndpointsProtocol=https;AccountName=readfromqueue20230505;AccountKey=dS2e0HcUBEYvWFb17e2MF+0HrZYyq9uW1HpbtHgDBdxvrs8lA3AzgmvnNR3Ur0J6DCmAUogdu0ku+AStrBSHwA==;BlobEndpoint=https://readfromqueue20230505.blob.core.windows.net/;TableEndpoint=https://readfromqueue20230505.table.core.windows.net/;QueueEndpoint=https://readfromqueue20230505.queue.core.windows.net/;FileEndpoint=https://readfromqueue20230505.file.core.windows.net/
 
 for ($i = 1; $i -lt 10; $i++) {
 
